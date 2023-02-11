@@ -10,6 +10,13 @@ export enum ValidationSource {
   PARAM = "params",
 }
 
+export const JoiAuthBearer = () =>
+  Joi.string().custom((value: string, helpers) => {
+    if (!value.startsWith("Bearer ")) return helpers.error("any.invalid");
+    if (!value.split(" ")[1]) return helpers.error("any.invalid");
+    return value;
+  }, "Authorization header validation");
+
 export default (
     schema: Joi.AnySchema,
     source: ValidationSource = ValidationSource.BODY

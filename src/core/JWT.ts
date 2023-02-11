@@ -73,5 +73,5 @@ async function decode(token: string): Promise<JwtPayload> {
 export default {
   encode,
   decode,
-  verify,
+  validate,
 };
