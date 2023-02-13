@@ -1,6 +1,7 @@
 import ApiKey, { ApiKeyModel } from "../model/ApiKey";
 
 async function findByKey(key: string): Promise<ApiKey | null> {
+  console.log(key);
   return ApiKeyModel.findOne({ key: key, status: true }).lean().exec();
 }
 
