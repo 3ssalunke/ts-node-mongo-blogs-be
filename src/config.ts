@@ -21,3 +21,15 @@ export const tokenInfo = {
   issuer: process.env.TOKEN_ISSUER || "",
   audience: process.env.TOKEN_AUDIENCE || "",
 };
+
+export const redis = {
+  host: process.env.REDIS_HOST || "",
+  port: parseInt(process.env.REDIS_PORT || "0"),
+  password: process.env.REDIS_PASSWORD || "",
+};
+
+export const caching = {
+  contentCacheDuration: parseInt(
+    process.env.CONTENT_CACHE_DURATION_MILLIS || "600000"
+  ),
+};

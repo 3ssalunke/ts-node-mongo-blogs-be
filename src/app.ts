@@ -8,7 +8,6 @@ import express, {
 import cors from "cors";
 import { corsURL, environment } from "./config";
 import routes from "./routes";
-import "./database";
 import {
   ApiError,
   ErrorType,
@@ -16,6 +15,8 @@ import {
   NotFoundError,
 } from "./core/ApiError";
 import Logger from "./core/Logger";
+import "./database";
+import "./cache";
 
 const app = express();
 
